@@ -118,10 +118,8 @@ export function createTwoslashFromCDN(options: TwoslashCdnOptions = {}): Twoslas
   })
 
   async function prepareTypes(code: string) {
-    await Promise.all([
-      init(),
-      ata(code),
-    ])
+    await init()
+    await ata(code)
   }
 
   const twoslasher = createTwoslasher({
